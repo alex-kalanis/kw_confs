@@ -3,7 +3,7 @@
 namespace kalanis\kw_confs\Interfaces;
 
 
-use kalanis\kw_confs\Exception;
+use kalanis\kw_confs\ConfException;
 
 
 /**
@@ -17,7 +17,7 @@ interface ILoader
      * @param string $module which module it will be looked for
      * @param string $conf which conf name will be looked for
      * @return string[] config array
-     * @throws Exception
+     * @throws ConfException
      */
     public function load(string $module, string $conf = ''): array;
 }

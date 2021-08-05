@@ -3,7 +3,7 @@
 namespace kalanis\kw_confs\Loaders;
 
 
-use kalanis\kw_confs\Exception;
+use kalanis\kw_confs\ConfException;
 use kalanis\kw_confs\Interfaces\ILoader;
 use kalanis\kw_paths\Interfaces\IPaths;
 use kalanis\kw_paths\Path;
@@ -46,7 +46,7 @@ class PhpLoader implements ILoader
     public function contentPath(string $module, string $conf = ''): ?string
     {
         if (empty($this->pathLib)) {
-            throw new Exception('Need to set Path library first!');
+            throw new ConfException('Need to set Path library first!');
         }
         $basicLookupDir = $this->pathLib->getDocumentRoot() . $this->pathLib->getPathToSystemRoot();
         foreach ($this->pathMasks as $pathMask) {
