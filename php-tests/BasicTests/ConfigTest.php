@@ -7,20 +7,11 @@ use CommonTestClass;
 use kalanis\kw_confs\Config;
 use kalanis\kw_confs\Interfaces\IConf;
 use kalanis\kw_confs\Interfaces\ILoader;
-use kalanis\kw_input\Input;
 use kalanis\kw_paths\Path;
 
 
 class ConfigTest extends CommonTestClass
 {
-    public function testInput(): void
-    {
-        // just for debug - this one works elsewhere
-        $input = new Input([]);
-        $input->offsetSet('abc', 'def');
-        $input->offsetGet('abc');
-    }
-
     public function testBasic(): void
     {
         $path = new Path();
