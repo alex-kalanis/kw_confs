@@ -12,12 +12,14 @@ before_script:
   - composer install
 
 script:
-  - find / -print 2>/dev/null | grep kw_paths
+  - ls /home/travis/build/alex-kalanis/kw_confs/
+  - ls /home/travis/build/alex-kalanis/kw_confs/vendor/alex-kalanis/
+  - cat /home/travis/build/alex-kalanis/kw_confs/vendor/alex-kalanis/kw_paths/php-src/Path.php
   - phpunit --configuration phpunit.xml --coverage-clover php-tests/data/clover.xml
 
-after_script:
-  - wget https://scrutinizer-ci.com/ocular.phar
-  - php ocular.phar code-coverage:upload --format=php-clover php-tests/data/clover.xml
+#after_script:
+#  - wget https://scrutinizer-ci.com/ocular.phar
+#  - php ocular.phar code-coverage:upload --format=php-clover php-tests/data/clover.xml
 
 notifications:
   email: "me@kalanys.com"
