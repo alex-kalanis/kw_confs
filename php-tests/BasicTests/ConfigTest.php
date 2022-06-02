@@ -7,23 +7,14 @@ use CommonTestClass;
 use kalanis\kw_confs\Config;
 use kalanis\kw_confs\Interfaces\IConf;
 use kalanis\kw_confs\Interfaces\ILoader;
-use kalanis\kw_paths\Path;
 
 
 class ConfigTest extends CommonTestClass
 {
     public function testBasic(): void
     {
-        $path = new Path();
-        $path->setDocumentRoot('/tmp/none');
-        Config::init($path);
-
-        Config::init($path, new XLoader());
+        Config::init(new XLoader());
         Config::load('baz');
-
-        $xPath = Config::getPath();
-        $xPath->setPathToSystemRoot('sdfgsdfgt/');
-        $this->assertNotEquals(Config::getOriginalPath(), $xPath);
 
         $this->assertEquals('pqr', Config::get('baz','def'));
         $this->assertEquals('lkj', Config::get('baz','ewq', 'lkj'));
@@ -35,9 +26,7 @@ class ConfigTest extends CommonTestClass
 
     public function testClass(): void
     {
-        $path = new Path();
-        $path->setDocumentRoot('/tmp/none');
-        Config::init($path, new XLoader());
+        Config::init(new XLoader());
         Config::loadClass(new XConf());
 
         $this->assertEquals('76pqr', Config::get('testing','def23'));
@@ -64,6 +53,11 @@ class XLoader implements ILoader
 
 class XConf implements IConf
 {
+    public function setPart(string $part): void
+    {
+        // nothing
+    }
+
     public function getConfName(): string
     {
         return 'testing';
