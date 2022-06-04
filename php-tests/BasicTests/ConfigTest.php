@@ -4,6 +4,7 @@ namespace BasicTests;
 
 
 use CommonTestClass;
+use kalanis\kw_confs\ConfException;
 use kalanis\kw_confs\Config;
 use kalanis\kw_confs\Interfaces\IConf;
 use kalanis\kw_confs\Interfaces\ILoader;
@@ -11,6 +12,9 @@ use kalanis\kw_confs\Interfaces\ILoader;
 
 class ConfigTest extends CommonTestClass
 {
+    /**
+     * @throws ConfException
+     */
     public function testBasic(): void
     {
         Config::init(new XLoader());
@@ -22,6 +26,13 @@ class ConfigTest extends CommonTestClass
         $this->assertEquals('123', Config::get('baz','asdf%s', '123'));
 
         $this->assertInstanceOf('\kalanis\kw_confs\Interfaces\ILoader', Config::getLoader());
+
+        $this->assertEquals(null, Config::get('wtf','non'));
+        $this->assertEquals(null, Config::get('baz','uup'));
+        Config::set('wtf', 'non', '351');
+        Config::set('baz', 'uup', '684');
+        $this->assertEquals(null, Config::get('wtf','non'));
+        $this->assertEquals('684', Config::get('baz','uup'));
     }
 
     public function testClass(): void

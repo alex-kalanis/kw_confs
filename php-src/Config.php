@@ -24,6 +24,11 @@ class Config
         static::$loader = $loader;
     }
 
+    /**
+     * @param string $module
+     * @param string $conf
+     * @throws ConfException
+     */
     public static function load(string $module, string $conf = ''): void
     {
         static::loadData($module, static::$loader->load($module, $conf));
@@ -44,7 +49,15 @@ class Config
 
     public static function get(string $module, string $key, $defaultValue = null)
     {
-        return (static::$configs[$module] && isset(static::$configs[$module][$key])) ? static::$configs[$module][$key] : $defaultValue ;
+        return (isset(static::$configs[$module]) && isset(static::$configs[$module][$key]))
+            ? static::$configs[$module][$key]
+            : $defaultValue
+        ;
+    }
+
+    public static function set(string $module, string $key, $defaultValue = null): void
+    {
+        isset(static::$configs[$module]) ? static::$configs[$module][$key] = $defaultValue : null ;
     }
 
     public static function getLoader(): ?ILoader
