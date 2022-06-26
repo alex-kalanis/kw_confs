@@ -38,3 +38,13 @@ $inputs = new \kalanis\kw_input\Inputs();
 $inputs->setSource($source)->loadEntries();
 
 // And now we have all necessary variables to build the context
+
+// Then in page/framework/whatever
+
+/// for module 'image as part of content' there came array ['your internal config key' => 'this value will be get', 'another key' => false, ]
+print \kalanis\kw_confs\Config::get('image as part of content', 'your internal key', 'none');
+/// and it returns 'none'
+print \kalanis\kw_confs\Config::get('image as part of content', 'your internal config key', 'what');
+/// and it returns 'this value will be get'
+
+// the best usage is inside the controller classes across the other modules - you just fill Config::get() with your keys
