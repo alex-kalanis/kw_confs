@@ -5,7 +5,8 @@
   "source": "https://github.com/alex-kalanis/kw_confs",
   "license": "BSD-3-Clause",
   "require": {
-    "alex-kalanis/kw_paths": ">=1.0",
+    "alex-kalanis/kw_paths": ">=3.0",
+    "alex-kalanis/kw_routed_paths": ">=1.0",
     "php": ">=7.2.0"
   },
   "suggest": {

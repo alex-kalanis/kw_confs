@@ -1,6 +1,6 @@
 # kw_confs
 
-[![Build Status](https://travis-ci.org/alex-kalanis/kw_confs.svg?branch=master)](https://travis-ci.org/alex-kalanis/kw_confs)
+[![Build Status](https://app.travis-ci.com/alex-kalanis/kw_confs.svg?branch=master)](https://app.travis-ci.com/github/alex-kalanis/kw_confs)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/alex-kalanis/kw_confs/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/alex-kalanis/kw_confs/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/alex-kalanis/kw_confs/v/stable.svg?v=1)](https://packagist.org/packages/alex-kalanis/kw_confs)
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.3-8892BF.svg)](https://php.net/)
@@ -15,7 +15,7 @@ Define used configurations inside the KWCMS tree. Parse them and return them.
 ```
 {
     "require": {
-        "alex-kalanis/kw_confs": "1.0"
+        "alex-kalanis/kw_confs": "2.0"
     }
 }
 ```
