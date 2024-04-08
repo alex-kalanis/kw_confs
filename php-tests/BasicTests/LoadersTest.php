@@ -31,6 +31,16 @@ class LoadersTest extends CommonTestClass
 
     /**
      * @throws ConfException
+     */
+    public function testNoLoader(): void
+    {
+        Config::init(null);
+        $this->expectException(ConfException::class);
+        Config::load('anything', 'will die');
+    }
+
+    /**
+     * @throws ConfException
      * @throws PathsException
      */
     public function testGetRealFile(): void

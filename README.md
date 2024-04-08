@@ -1,9 +1,9 @@
 # kw_confs
 
-[![Build Status](https://app.travis-ci.com/alex-kalanis/kw_confs.svg?branch=master)](https://app.travis-ci.com/github/alex-kalanis/kw_confs)
+![Build Status](https://github.com/alex-kalanis/kw_confs/actions/workflows/code_checks.yml/badge.svg)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/alex-kalanis/kw_confs/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/alex-kalanis/kw_confs/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/alex-kalanis/kw_confs/v/stable.svg?v=1)](https://packagist.org/packages/alex-kalanis/kw_confs)
-[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.3-8892BF.svg)](https://php.net/)
+[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.4-8892BF.svg)](https://php.net/)
 [![Downloads](https://img.shields.io/packagist/dt/alex-kalanis/kw_confs.svg?v1)](https://packagist.org/packages/alex-kalanis/kw_confs)
 [![License](https://poser.pugx.org/alex-kalanis/kw_confs/license.svg?v=1)](https://packagist.org/packages/alex-kalanis/kw_confs)
 [![Code Coverage](https://scrutinizer-ci.com/g/alex-kalanis/kw_confs/badges/coverage.png?b=master&v=1)](https://scrutinizer-ci.com/g/alex-kalanis/kw_confs/?branch=master)
@@ -12,12 +12,8 @@ Define used configurations inside the KWCMS tree. Parse them and return them.
 
 ## PHP Installation
 
-```
-{
-    "require": {
-        "alex-kalanis/kw_confs": "2.0"
-    }
-}
+```bash
+composer.phar require alex-kalanis/kw_confs
 ```
 
 (Refer to [Composer Documentation](https://github.com/composer/composer/blob/master/doc/00-intro.md#introduction) if you are not
